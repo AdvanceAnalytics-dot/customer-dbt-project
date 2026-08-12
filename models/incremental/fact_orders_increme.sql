@@ -11,7 +11,7 @@ select
     amount,
     created_date,
     updated_date
-from {{ source('RAW', 'ORDERS') }}
+from {{ ref('stg_customers') }}
 
 {% if is_incremental() %}
 where created_date >= (
