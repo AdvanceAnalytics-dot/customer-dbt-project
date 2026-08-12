@@ -9,7 +9,7 @@ select
     customer_id,
     order_date,
     amount,
-    created_date date,
+    created_date,
     updated_date
 from {{ source('RAW', 'ORDERS') }}
 
