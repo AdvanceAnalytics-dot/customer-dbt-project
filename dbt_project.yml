@@ -40,7 +40,8 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+
 seeds:
-   dbt_assessment:
-     +schema: reference
-     +quote_columns: false
+  my_new_project:
+    +schema: reference
+    +quote_columns: false
