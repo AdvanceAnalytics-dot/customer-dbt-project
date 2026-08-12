@@ -10,3 +10,5 @@ sources:
     tables:
  
       - name: CUSTOMERS
+
+      - name: ORDERS
