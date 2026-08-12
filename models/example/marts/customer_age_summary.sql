@@ -2,4 +2,4 @@
 select 
     age_group,
     count(*) as customer_count 
-from {{ ref('customer_age') }} group by age_group
+from {{ ref('customer_age') }} group by customer_name
