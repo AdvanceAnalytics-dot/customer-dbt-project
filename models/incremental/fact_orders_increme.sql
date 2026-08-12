@@ -16,7 +16,7 @@ from {{ ref('stg_customers') }}
 {% if is_incremental() %}
 where created_date >= (
     select
-        Max(created_date),
+        Max(created_date)
         '2026-08-12'::timestamp
     )
     from {{ this }}
