@@ -26,3 +26,13 @@ models:
             tests:
                 - unique
                 - not_null
+   
+    - name: fct_orders_incremental
+      columns:
+          - name: customer_id
+            tests:
+              - not_null
+              - relationships:
+                  to:
+      ref('stg_customers')
+                    field: customer_id
