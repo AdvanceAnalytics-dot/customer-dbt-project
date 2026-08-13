@@ -15,7 +15,7 @@ select
 from {{ source('RAW','ORDERS') }}
  
  
-{% if is_incremental() %}
+{% if is_incremental() % }
 where created_date >= (
     select coalesce(
         Max(created_date),

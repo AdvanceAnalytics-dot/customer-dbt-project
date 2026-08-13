@@ -27,12 +27,9 @@ models:
                 - unique
                 - not_null
 
-    - name: fact_orders_increme
-      columns:
-        - name: customer_id
-          tests:
-          - not_null
-          - relationships:
-              to:
-                 ref('stg_customers')
-              field: customer_id        
+    - name: customer_id
+      tests:
+        - not null
+        - relationships:
+            to: ref('stg_customers')
+            field: customer_id
