@@ -4,7 +4,6 @@
     incremental_strategy='merge'
 ) }}
  
- 
 select
     order_id,
     customer_id,
@@ -12,15 +11,16 @@ select
     amount,
     created_date,
     updated_date
-from {{ source('RAW','ORDERS') }}
+from {{ source('RAW', 'ORDERS') }}
  
+{% if is_incremental() %}
  
-{% if is_incremental() % }
 where created_date >= (
     select coalesce(
-        Max(created_date),
-        '2026-08-12'::timestamp
+        max(created_date),
+        '2026-08-13'::timestamp
     )
     from {{ this }}
 )
+ 
 {% endif %}
