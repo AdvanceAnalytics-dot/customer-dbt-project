@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+
+   - name: RAW
+     description: " RAW snowflake source tables."
+     schema: RAW
+     tables:
+       - name: customers
+       - name: orders
